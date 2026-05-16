@@ -1,0 +1,250 @@
+{
+    "info": {
+        "name": "Fee Sync System API",
+        "description": "Complete API collection for Fee Sync System - Real-Time Payment Synchronization",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8080/api",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/health",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "health"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "1. Process Payment",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"rollNumber\": \"22CS001\",\n  \"amount\": 5000\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/payment",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "payment"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "2. Get Transaction Details",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/transaction/TXN-REPLACE-WITH-ACTUAL-ID",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "transaction",
+                        "TXN-REPLACE-WITH-ACTUAL-ID"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "3. Verify Transaction",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"transactionId\": \"TXN-REPLACE-WITH-ACTUAL-ID\"\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/verify",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "verify"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "4. Get Student Status",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/student-status?rollNumber=22CS001",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "student-status"
+                    ],
+                    "query": [
+                        {
+                            "key": "rollNumber",
+                            "value": "22CS001"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "5. Check No-Due Status",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/no-due?rollNumber=22CS001",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "no-due"
+                    ],
+                    "query": [
+                        {
+                            "key": "rollNumber",
+                            "value": "22CS001"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "6. Get All Students (Admin)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/students",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "students"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "7. Get All Transactions (Admin)",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/transactions",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "transactions"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Error Test: Invalid Roll Number",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"rollNumber\": \"INVALID999\",\n  \"amount\": 5000\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/payment",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "payment"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Error Test: Negative Amount",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"rollNumber\": \"22CS001\",\n  \"amount\": -1000\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/payment",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "payment"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Error Test: Amount Exceeds Due",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"rollNumber\": \"22CS001\",\n  \"amount\": 999999\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/payment",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "payment"
+                    ]
+                }
+            }
+        }
+    ]
+}

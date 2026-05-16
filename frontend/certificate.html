@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Due Certificate - Fee Sync System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/certificate.css">
+    <!-- html2pdf.js for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- Controls (Fixed Side) -->
+    <div class="controls no-print">
+        <button class="btn btn-primary" onclick="window.print()">
+            <i class="fas fa-print me-2"></i>Print Certificate
+        </button>
+        <button class="btn btn-success" id="downloadPdfBtn">
+            <i class="fas fa-file-pdf me-2"></i>Download PDF
+        </button>
+        <a href="status.html" class="btn btn-secondary">
+            <i class="fas fa-arrow-left me-2"></i>Back to Status
+        </a>
+    </div>
+
+    <!-- Certificate Container (A4) -->
+    <div class="certificate-container" id="certificateArea">
+        <div class="certificate-border">
+            <!-- Header -->
+            <div class="college-header">
+                <div class="college-name" id="certCollegeName">ABC Engineering College</div>
+                <div class="college-subheader">Affiliated to University of Technology</div>
+                <i class="fas fa-university fa-3x text-primary my-2"></i>
+            </div>
+
+            <div class="certificate-title">NO DUE CLEARANCE CERTIFICATE</div>
+
+            <!-- Body -->
+            <div class="certificate-body">
+                <p>This is to certify that:</p>
+                <div class="student-info">
+                    <div class="info-item">
+                        <span class="label">Student Name:</span>
+                        <span id="certStudentName">Loading...</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Roll Number:</span>
+                        <span id="certRollNumber">Loading...</span>
+                    </div>
+                </div>
+
+                <p>Has successfully paid all required fees for the academic year.</p>
+
+                <div class="info-item">
+                    <span class="label">Total Fee:</span>
+                    <span id="certTotalFee">₹ 0.00</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Total Paid:</span>
+                    <span id="certTotalPaid">₹ 0.00</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Due Amount:</span>
+                    <span id="certDueAmount">₹ 0.00</span>
+                </div>
+
+                <p class="mt-4"><strong>Transaction Summary:</strong></p>
+                <table class="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Transaction ID</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="certTransactionBody">
+                        <!-- Transactions will be loaded here -->
+                    </tbody>
+                </table>
+
+                <div class="statement" id="certStatement">
+                    <!-- Statement will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="certificate-footer">
+                <div class="footer-left">
+                    <p>Issue Date: <span id="certIssueDate">--/--/----</span></p>
+                    <p>Certificate ID: <strong id="certIdValue">CERT-XXXXXX</strong></p>
+                    <!-- Small QR code placeholder -->
+                    <div class="qr-code" id="qrCodePlaceholder">
+                        [Verification QR Code]
+                        <br>
+                        Verify at: feesync.edu/verify
+                    </div>
+                </div>
+
+                <div class="footer-right">
+                    <div class="seal-placeholder">
+                        OFFICIAL SEAL<br>
+                        ABC COLLEGE<br>
+                        REGISTRAR
+                    </div>
+                    <div class="signature-line"></div>
+                    <p><strong>Authorized Signatory</strong></p>
+                    <p>Office of the Registrar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Overlay -->
+    <div id="errorOverlay"
+        class="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-none flex-column align-items-center justify-content-center text-white"
+        style="z-index: 9999;">
+        <i class="fas fa-exclamation-circle fa-4x mb-3 text-danger"></i>
+        <h2 id="certErrorMessage">Failed to load certificate</h2>
+        <a href="status.html" class="btn btn-light mt-3">Go Back</a>
+    </div>
+
+    <script src="js/certificate.js"></script>
+</body>
+
+</html>

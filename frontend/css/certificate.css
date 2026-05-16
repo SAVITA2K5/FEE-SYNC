@@ -1,0 +1,181 @@
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.certificate-container {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.certificate-border {
+    border: 10px double #1a3c6d;
+    padding: 15mm;
+    height: 100%;
+    min-height: 250mm;
+    display: flex;
+    flex-direction: column;
+}
+
+.college-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.college-name {
+    font-size: 28pt;
+    font-weight: bold;
+    color: #1a3c6d;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.college-subheader {
+    font-size: 14pt;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.certificate-title {
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.certificate-body {
+    font-size: 12pt;
+    line-height: 1.8;
+    color: #333;
+    flex-grow: 1;
+}
+
+.student-info {
+    margin-bottom: 30px;
+}
+
+.info-item {
+    margin-bottom: 10px;
+}
+
+.label {
+    font-weight: bold;
+    width: 150px;
+    display: inline-block;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.transaction-table th,
+.transaction-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.transaction-table th {
+    background-color: #f8f9fa;
+    color: #1a3c6d;
+}
+
+.statement {
+    margin: 30px 0;
+    font-style: italic;
+    text-align: center;
+    font-weight: 500;
+}
+
+.certificate-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 50px;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+    position: relative;
+}
+
+.signature-line {
+    border-top: 1px solid #000;
+    width: 200px;
+    margin-top: 60px;
+    margin-bottom: 5px;
+}
+
+.seal-placeholder {
+    width: 120px;
+    height: 120px;
+    border: 3px solid rgba(199, 44, 44, 0.61);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(199, 44, 44, 0.61);
+    font-weight: bold;
+    transform: rotate(-15deg);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    pointer-events: none;
+    text-align: center;
+    font-size: 10px;
+    padding: 5px;
+}
+
+.qr-code {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+}
+
+.controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media print {
+
+    .controls,
+    .navbar,
+    footer {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .certificate-container {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+}

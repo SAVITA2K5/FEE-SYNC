@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Sync System - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-university me-2"></i>Fee Sync System
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="payment.html">Payment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="status.html">Check Status</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-4">
+                <i class="fas fa-sync-alt me-3"></i>Fee Sync System
+            </h1>
+            <p class="lead mb-5">Real-Time Fee Payment Data Synchronization and No-Due Clearance System</p>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <a href="payment.html" class="btn btn-primary btn-lg w-100">
+                        <i class="fas fa-credit-card me-2"></i>Make Payment
+                    </a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="status.html" class="btn btn-info btn-lg w-100">
+                        <i class="fas fa-search me-2"></i>Check Status
+                    </a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="admin.html" class="btn btn-danger btn-lg w-100">
+                        <i class="fas fa-user-shield me-2"></i>Admin Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container my-5">
+        <h2 class="text-center mb-5">Key Features</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow feature-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-bolt fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Real-Time Sync</h5>
+                        <p class="card-text">Instant payment synchronization between digital payment system and college
+                            database.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow feature-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
+                        <h5 class="card-title">Secure Verification</h5>
+                        <p class="card-text">Admin verification system ensures all transactions are validated before fee
+                            updates.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow feature-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-certificate fa-3x text-warning mb-3"></i>
+                        <h5 class="card-title">No-Due Clearance</h5>
+                        <p class="card-text">Automatic no-due status generation once all fees are paid and verified.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">How It Works</h2>
+            <div class="row">
+                <div class="col-md-3 text-center mb-4">
+                    <div class="step-number">1</div>
+                    <h5>Submit Payment</h5>
+                    <p>Student submits payment with roll number and amount</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div class="step-number">2</div>
+                    <h5>Transaction Recorded</h5>
+                    <p>System generates unique transaction ID and stores payment</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div class="step-number">3</div>
+                    <h5>Admin Verifies</h5>
+                    <p>Admin reviews and verifies the transaction</p>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div class="step-number">4</div>
+                    <h5>Fee Updated</h5>
+                    <p>Student fee status updated automatically in real-time</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-2">&copy; 2026 Fee Sync System. Real-Time Payment Synchronization.</p>
+            <p class="mb-0">
+                <i class="fas fa-code me-2"></i>Built with Spring Boot, MySQL, Bootstrap 5
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
